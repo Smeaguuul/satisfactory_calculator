@@ -1,5 +1,7 @@
 import postgres from 'postgres'
+import  'dotenv/config';
 
-const sql = postgres('postgres://obscure:secure@192.168.1.131:5432/satisfactory_calculator') // will use psql environment variables
+// console.log(process.env.POSTGRES)
+const sql = postgres(process.env.POSTGRES) // Opretter forbindelsen med url'en givet i .env
 
 export default sql
